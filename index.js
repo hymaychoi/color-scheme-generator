@@ -1,4 +1,4 @@
-import { colorPickerModes } from "/data.js";
+import { colorPickerModes } from ".data";
 
 const colorPickerForm = document.getElementById("colorPick-form");
 const colorPickerInput = document.getElementById("colorPicker");
