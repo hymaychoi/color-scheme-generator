@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>Color Scheme Generator</title>
+  </head>
+  <body>
+    <div id="container">
+      <div>
+      <header>
+        <div class="wrapper">
+          <span class="site-title">🦎</span>
+          <span class="site-title">Color</span>
+          <span class="site-title">Scheme</span>
+          <span class="site-title">Generator</span>
+          <span class="site-title">🦎</span>
+        </div>
+      </header>
+    </div>
+      <div id="form-div">
+        <form id="colorPick-form" method="get" >
+          <input id="colorPicker" type="color" />
+          <select name="colorPick-mode" id="colorPick-mode">
+ 
+          </select>
+          <button type='submit' id="btn-getNewScheme">Get Color Scheme</button>
+        </form>
+      </div>
+
+      <div id="main">
+        <div id="result-color-div">
+
+        </div>
+        <div id="result-code-div">
+
+        </div>
+    </div>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
