@@ -1,9 +1,16 @@
-import { colorPickerModes } from "./data";
+const colorPickerModes = [
+  "monochrome",
+  "monochrome-dark",
+  "monochrome-light",
+  "analogic",
+  "complement",
+  "analogic-complement",
+  "triad quad",
+];
 
 const colorPickerForm = document.getElementById("colorPick-form");
 const colorPickerInput = document.getElementById("colorPicker");
 const colorPickerModeDropDown = document.getElementById("colorPick-mode");
-
 const resultColorDiv = document.getElementById("result-color-div");
 const resultColorCodeDiv = document.getElementById("result-code-div");
 
@@ -51,8 +58,7 @@ function fetchToRender() {
   }
 
   fetch(
-    `https://www.thecolorapi.com/scheme?hex=${colorPicked}&mode=${modePicked}`
-  )
+    `https://www.thecolorapi.com/scheme?hex=${colorPicked}&mode=${modePicked}`)
     .then((res) => res.json())
     .then((data) => {
       let colorSchemeSetArray = data.colors;
@@ -60,7 +66,6 @@ function fetchToRender() {
       for (let i = 0; i < 5; i++) {
         colorSchemeSetStrings.push(colorSchemeSetArray[i]);
       }
-
       // to store each object's hex value
       for (let i = 0; i < colorSchemeSetStrings.length; i++) {
         resultColorSchemeSet.push(colorSchemeSetStrings[i].hex.value);
@@ -83,8 +88,8 @@ function renderColor() {
   resultCodeDivHtml = resultColorSchemeSet
     .map((resultColor) => {
       return `
-                    <label for='${resultColor}' class='copy-label'>Click to copy!</label>
-                    <input class='result-code' id='${resultColor}' type="text" value='${resultColor}'/>`;
+              <label for='${resultColor}' class='copy-label'>Click to copy!</label>
+              <input class='result-code' id='${resultColor}' type="text" value='${resultColor}'/>`;
     })
     .join("");
 
@@ -102,9 +107,7 @@ function renderColor() {
       let copiedColorText = event.target.value
       navigator.clipboard.writeText(copiedColorText).then(() => {
         alert(`Copied Color: ${copiedColorText}`)
-    });
-    }
-    );
+    });});
   });
 }
 
