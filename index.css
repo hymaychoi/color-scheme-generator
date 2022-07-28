@@ -88,6 +88,7 @@ header{
   cursor: pointer;
   background-color: #4caf50;
   color: white;
+  text-align: center;
 }
 
 #result-code-div .result-code {
